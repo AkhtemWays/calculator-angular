@@ -16,10 +16,6 @@ export class MotionDirective {
   constructor(el: ElementRef) {
     this.element = el;
   }
-
-  @Input('motion-attr')
-  public value: any;
-  @Output('value') click = new EventEmitter<string>();
   @HostListener('mouseover')
   public onMouseOver() {
     this.element.nativeElement.style.backgroundColor = 'blue';
@@ -35,6 +31,5 @@ export class MotionDirective {
   @HostListener('mouseup')
   public onMouseUp() {
     this.element.nativeElement.style.backgroundColor = 'blue';
-    console.log(this.value);
   }
 }

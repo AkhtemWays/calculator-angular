@@ -1,60 +1,76 @@
 <div class="main">
-    <div class="field" id="main-field">
-        <h4>{{value_cal}}</h4>
-    </div>
-    <div [motion-attr]="'/'" class="first-field" id="first-field-divide">
-        <img
-            src="https://image.flaticon.com/icons/svg/660/660236.svg"
-            width="20px"
-            height="20px"
-            alt="nothing"
-            margin-top="4px"
-        >
-    </div>
-    <div [motion-attr]="'+'" class="first-field" id="second-field">
-        <h4 class="glyphicon glyphicon-plus"></h4>
-    </div>
-    <div [motion-attr]="'-'" class="first-field" id="third-field">
-        <h4 class="glyphicon glyphicon-minus"></h4>
-    </div>
-    <div [motion-attr]="'*'" class="first-field" id="fourth-field">
-        <h4 class="glyphicon glyphicon-asterisk"></h4>
-    </div>
-    <div [motion-attr]="'1'" class="second-field">
-        <strong>1</strong>
-    </div>
-    <div [motion-attr]="'2'" class="second-field">
-        <strong>2</strong>
-    </div>
-    <div [motion-attr]="'3'" class="second-field">
-        <strong>3</strong>
-    </div>
-    <div [motion-attr]="'clear'" class="second-field">
-        <strong>Clear</strong>
-    </div>
-    <div [motion-attr]="'4'" class="third-field">
-        <strong>4</strong>
-    </div>
-    <div [motion-attr]="'5'" class="third-field">
-        <strong>5</strong>
-    </div>
-    <div [motion-attr]="'6'" class="third-field">
-        <strong>6</strong>
-    </div>
-    <div [motion-attr]="'C'" class="third-field">
-        <strong>C</strong>
-    </div>
-    <div [motion-attr]="'7'" class="fourth-field">
-        <strong>7</strong>
-    </div>
-    <div [motion-attr]="'8'" class="fourth-field">
-        <strong>8</strong>
-    </div>
-    <div [motion-attr]="'9'" class="fourth-field">
-        <strong>9</strong>
-    </div>
-    <div class="fourth-field" id="equal-sign" [motion-attr]="'='">
-        <img src="https://image.flaticon.com/icons/svg/56/56751.svg" width="15px" height="15px">
-    </div>
+  <div *ngIf="!currentSign && !currentValue" class="field" id="main-field">
+    <h4>{{ value }}</h4>
+  </div>
+  <div *ngIf="currentSign && currentValue" class="field" id="main-field">
+    <h4>{{ value }} {{ currentSign }} {{ currentValue }}</h4>
+  </div>
+  <div *ngIf="currentSign && !currentValue" class="field" id="main-field">
+    <h4>{{ value }} {{ currentSign }}</h4>
+  </div>
+  <div motion-attr class="first-field" id="first-field-divide">
+    <button (click)="Evaluate('/')">
+      <img
+        src="https://image.flaticon.com/icons/svg/660/660236.svg"
+        width="20px"
+        height="20px"
+        alt="nothing"
+        margin-top="4px"
+      />
+    </button>
+  </div>
+  <div motion-attr class="first-field" id="second-field">
+    <button (click)="Evaluate('+')" class="glyphicon glyphicon-plus"></button>
+  </div>
+  <div motion-attr class="first-field" id="third-field">
+    <button (click)="Evaluate('-')" class="glyphicon glyphicon-minus"></button>
+  </div>
+  <div motion-attr class="first-field" id="fourth-field">
+    <button
+      (click)="Evaluate('*')"
+      class="glyphicon glyphicon-asterisk"
+    ></button>
+  </div>
+  <div motion-attr class="second-field">
+    <button (click)="setCurrentValue('1')">1</button>
+  </div>
+  <div motion-attr class="second-field">
+    <button (click)="setCurrentValue('2')">2</button>
+  </div>
+  <div motion-attr class="second-field">
+    <button (click)="setCurrentValue('3')">3</button>
+  </div>
+  <div motion-attr class="second-field">
+    <button (click)="Evaluate('clear')">Clear</button>
+  </div>
+  <div motion-attr class="third-field">
+    <button (click)="setCurrentValue('4')">4</button>
+  </div>
+  <div motion-attr class="third-field">
+    <button (click)="setCurrentValue('5')">5</button>
+  </div>
+  <div motion-attr class="third-field">
+    <button (click)="setCurrentValue('6')">6</button>
+  </div>
+  <div motion-attr class="third-field">
+    <button (click)="setCurrentValue('C')">C</button>
+  </div>
+  <div motion-attr class="fourth-field">
+    <button (click)="setCurrentValue('7')">7</button>
+  </div>
+  <div motion-attr class="fourth-field">
+    <button (click)="setCurrentValue('8')">8</button>
+  </div>
+  <div motion-attr class="fourth-field">
+    <button (click)="setCurrentValue('9')">9</button>
+  </div>
+  <div class="fourth-field" id="equal-sign" motion-attr>
+    <button (click)="Evaluate('=')">
+      <img
+        src="https://image.flaticon.com/icons/svg/56/56751.svg"
+        width="15px"
+        height="15px"
+      />
+    </button>
+  </div>
 </div>
-
