@@ -1,0 +1,47 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 70%;
+  margin: auto;
+}
+
+#main-field {
+  grid-column: 1/5;
+  text-align: right;
+  height: 3em;
+  background-color: black;
+  color: white;
+}
+
+#first-field-divide {
+  padding-top: 9px;
+}
+
+#main-field>p {
+  margin-top: 4em;
+}
+
+.first-field {
+  border: 1px solid black;
+  text-align: center;
+}
+
+.second-field {
+  border: 1px solid black;
+  text-align: center;
+}
+
+.third-field {
+  border: 1px solid black;
+  text-align: center;
+}
+
+.fourth-field {
+  border: 1px solid black;
+  text-align: center;
+}
+
+#equal-sign {
+  border: 1px solid black;
+  text-align: center;
+}
