@@ -5,18 +5,29 @@
   margin: auto;
   font-family: cursive;
   font-style: italic;
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 1em;
 }
 
-#main-field {
+.field h4 {
+  margin-top: 2em;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.field {
   grid-column: 1/5;
   text-align: right;
-  height: 3em;
   background-color: black;
   color: white;
 }
 
+.common-field h4 {
+  margin-top: 2em;
+}
+
 .common-field {
-  border: 1px solid black;
+  border: 3px solid black;
   text-align: center;
-  border: 1px solid black;
+  border-radius: 5px;
 }
