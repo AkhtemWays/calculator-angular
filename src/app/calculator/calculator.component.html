@@ -8,63 +8,64 @@
   <div *ngIf="currentSign && !currentValue" class="field" id="main-field">
     <h4>{{ value }} {{ currentSign }}</h4>
   </div>
-  <div motion-attr class="first-field" id="first-field-divide" (click)="Evaluate('/')">
+  <div motion-attr class="common-field" (click)="Evaluate('/')">
+    <h4><img
+      src="https://image.flaticon.com/icons/svg/660/660236.svg"
+      width="20px"
+      height="20px"
+      alt="nothing"
+      margin-top="4px"
+    /></h4>
 
-      <img
-        src="https://image.flaticon.com/icons/svg/660/660236.svg"
-        width="20px"
-        height="20px"
-        alt="nothing"
-        margin-top="4px"
-      />
-
-  </div>
-  <div motion-attr class="first-field glyphicon glyphicon-plus" id="second-field" (click)="Evaluate('+')">
 
   </div>
-  <div motion-attr class="first-field glyphicon glyphicon-minus" id="third-field" (click)="Evaluate('-')">
-
+  <div motion-attr class="common-field" (click)="Evaluate('+')">
+    <h4 class="glyphicon glyphicon-plus"></h4>
   </div>
-  <div motion-attr class="first-field glyphicon glyphicon-asterisk" id="fourth-field" (click)="Evaluate('*')">
+  <div motion-attr class="common-field" (click)="Evaluate('-')">
+    <h4 class="glyphicon glyphicon-minus"></h4>
   </div>
-  <div motion-attr class="second-field" (click)="setCurrentValue('1')">
-    1
+  <div motion-attr class="common-field" (click)="Evaluate('*')">
+    <h4 class="glyphicon glyphicon-asterisk"></h4>
   </div>
-  <div motion-attr class="second-field" (click)="setCurrentValue('2')">
-    2
+  <div motion-attr class="common-field" (click)="setCurrentValue('1')">
+    <h4>1</h4>
   </div>
-  <div motion-attr class="second-field" (click)="setCurrentValue('3')">
-    3
+  <div motion-attr class="common-field" (click)="setCurrentValue('2')">
+    <h4>2</h4>
   </div>
-  <div motion-attr class="second-field" (click)="Evaluate('clear')">
-    Clear
+  <div motion-attr class="common-field" (click)="setCurrentValue('3')">
+    <h4>3</h4>
   </div>
-  <div motion-attr class="third-field" (click)="setCurrentValue('4')">
-    4
+  <div motion-attr class="common-field" (click)="Evaluate('clear')">
+    <h4>Clear</h4>
   </div>
-  <div motion-attr class="third-field" (click)="setCurrentValue('5')">
-    5
+  <div motion-attr class="common-field" (click)="setCurrentValue('4')">
+    <h4>4</h4>
   </div>
-  <div motion-attr class="third-field" (click)="setCurrentValue('6')">
-    6
+  <div motion-attr class="common-field" (click)="setCurrentValue('5')">
+    <h4>5</h4>
   </div>
-  <div motion-attr class="third-field" (click)="setCurrentValue('C')">
-    C
+  <div motion-attr class="common-field" (click)="setCurrentValue('6')">
+    <h4>6</h4>
   </div>
-  <div motion-attr class="fourth-field" (click)="setCurrentValue('7')">
-    7
+  <div motion-attr class="common-field" (click)="setCurrentValue('C')">
+    <h4>C</h4>
   </div>
-  <div motion-attr class="fourth-field" (click)="setCurrentValue('8')">
-    8
+  <div motion-attr class="common-field" (click)="setCurrentValue('7')">
+    <h4>7</h4>
   </div>
-  <div motion-attr class="fourth-field" (click)="setCurrentValue('9')">
-    9
+  <div motion-attr class="common-field" (click)="setCurrentValue('8')">
+    <h4>8</h4>
   </div>
-  <div class="fourth-field" id="equal-sign" motion-attr (click)="Evaluate('=')">
-      <img
+  <div motion-attr class="common-field" (click)="setCurrentValue('9')">
+    <h4>9</h4>
+  </div>
+  <div class="common-field" motion-attr (click)="Evaluate('=')">
+      <h4><img
         src="https://image.flaticon.com/icons/svg/56/56751.svg"
         width="15px"
         height="15px"
-      />
+      /></h4>
   </div>
 </div>

@@ -3,6 +3,8 @@
   grid-template-columns: repeat(4, 1fr);
   width: 70%;
   margin: auto;
+  font-family: cursive;
+  font-style: italic;
 }
 
 #main-field {
@@ -13,50 +15,8 @@
   color: white;
 }
 
-button {
-  background: none;
-  border: none;
-  margin: 0;
-  padding: 0;
-  display: block;
-  cursor: pointer;
-  text-align: center;
-}
-
-#first-field-divide {
-  padding-top: 9px;
-}
-
-#main-field>p {
-  margin-top: 4em;
-}
-
-.first-field {
+.common-field {
   border: 1px solid black;
   text-align: center;
-}
-
-.second-field {
   border: 1px solid black;
-  text-align: center;
-  height: 4em;
-  font-size: large;
-  font-weight: bold;
-  align-self: center;
-  margin-top: 1em;
-}
-
-.third-field {
-  border: 1px solid black;
-  text-align: center;
-}
-
-.fourth-field {
-  border: 1px solid black;
-  text-align: center;
-}
-
-#equal-sign {
-  border: 1px solid black;
-  text-align: center;
 }
