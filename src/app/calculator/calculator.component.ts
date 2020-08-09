@@ -43,7 +43,6 @@ export class CalculatorComponent {
     }
   }
   public Evaluate(action: string): void {
-    console.log(action);
     switch (action) {
       case '+':
         if (!this.currentSign) {
@@ -52,6 +51,7 @@ export class CalculatorComponent {
         } else {
           this.helper(action);
         }
+
         break;
       case '-':
         if (!this.currentSign) {
@@ -69,6 +69,7 @@ export class CalculatorComponent {
         } else {
           this.helper(action);
         }
+
         break;
       case '*':
         if (!this.currentSign) {
@@ -77,9 +78,11 @@ export class CalculatorComponent {
         } else {
           this.helper(action);
         }
+
         break;
       case '=':
         this.helper(action);
+
         break;
 
       case 'clear':
@@ -87,6 +90,18 @@ export class CalculatorComponent {
         this.currentSign = '';
         this.currentValue = '';
         this.initial = true;
+        break;
+      case 'ln':
+        this.helper2(action);
+        break;
+      case 'exp':
+        this.helper2(action);
+        break;
+      case 'fac':
+        this.helper2(action);
+        break;
+      case 'sqrt':
+        this.helper2(action);
         break;
       default:
         return;
@@ -131,5 +146,73 @@ export class CalculatorComponent {
       this.currentValue = '';
       this.currentSign = action === '=' ? '' : action;
     }
+  }
+  private helper2(action: string): void {
+    switch (action) {
+      case 'ln':
+        if (
+          !this.currentSign &&
+          !this.currentValue &&
+          Number.parseFloat(this.value) > 0
+        ) {
+          this.value = Math.log(Number.parseFloat(this.value)).toString();
+        } else if (Number.parseFloat(this.value) <= 0) {
+          alert('Функция не определенна в этой точке');
+          return;
+        }
+        break;
+      case 'exp':
+        if (!this.currentSign && !this.currentValue) {
+          this.value = Math.exp(Number.parseFloat(this.value)).toString();
+        }
+        break;
+      case 'sqrt':
+        if (
+          !this.currentSign &&
+          !this.currentValue &&
+          Number.parseFloat(this.value) >= 0
+        ) {
+          this.value = Math.sqrt(Number.parseFloat(this.value)).toString();
+        } else if (Number.parseFloat(this.value) < 0) {
+          alert('Функция не определенна в этой точке');
+          return;
+        }
+        break;
+      case 'fac':
+        if (
+          !this.currentSign &&
+          !this.currentValue &&
+          Number.parseFloat(this.value) >= 0 &&
+          Number.parseInt(this.value) === Number.parseFloat(this.value)
+        ) {
+          this.value = this.factorial(Number.parseInt(this.value)).toString();
+        } else if (
+          Number.parseFloat(this.value) < 0 &&
+          Number.parseInt(this.value) !== Number.parseFloat(this.value)
+        ) {
+          alert(
+            'Функция не определенна в этой точке и применяется только на целые числа'
+          );
+          return;
+        } else if (Number.parseFloat(this.value) < 0) {
+          alert('Функция не определенна в этой точке');
+          return;
+        } else if (
+          Number.parseInt(this.value) !== Number.parseFloat(this.value)
+        ) {
+          alert('Функция применяется только на целые числа');
+          return;
+        }
+        break;
+      default:
+        return;
+    }
+  }
+  private factorial(n: number) {
+    let result: number = 1;
+    for (let i = 2; i <= n; i++) {
+      result *= i;
+    }
+    return result.toString();
   }
 }

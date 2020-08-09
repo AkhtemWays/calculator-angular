@@ -1,11 +1,11 @@
 <div class="main">
-  <div *ngIf="!currentSign && !currentValue" class="field" id="main-field">
+  <div *ngIf="!currentSign && !currentValue" class="field">
     <h4>{{ value }}</h4>
   </div>
-  <div *ngIf="currentSign && currentValue" class="field" id="main-field">
+  <div *ngIf="currentSign && currentValue" class="field">
     <h4>{{ value }} {{ currentSign }} {{ currentValue }}</h4>
   </div>
-  <div *ngIf="currentSign && !currentValue" class="field" id="main-field">
+  <div *ngIf="currentSign && !currentValue" class="field">
     <h4>{{ value }} {{ currentSign }}</h4>
   </div>
   <div motion-attr class="common-field" (click)="Evaluate('/')">
@@ -67,5 +67,21 @@
         width="15px"
         height="15px"
       /></h4>
+  </div>
+  <div class="common-field" motion-attr (click)="Evaluate('sqrt')">
+    <h4><img
+      src="https://image.flaticon.com/icons/svg/32/32538.svg"
+      width="15px"
+      height="15px"
+    /></h4>
+  </div>
+  <div class="common-field" motion-attr (click)="Evaluate('ln')">
+    <h4>ln(x)</h4>
+  </div>
+  <div class="common-field" motion-attr (click)="Evaluate('fac')">
+    <h4>x!</h4>
+  </div>
+  <div class="common-field" motion-attr (click)="Evaluate('exp')">
+    <h4>exp(x)</h4>
   </div>
 </div>
